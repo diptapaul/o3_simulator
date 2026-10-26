@@ -1,0 +1,37 @@
+Issue width = 3
+
+                              ISSUE          EX             MEM            WB             COMMIT         
+Mult.d F4, F1, F2             [1]            [2, 7]         []             [8]            [9]
+Add.d F5, F4, F3              [1]            [9, 11]        []             [12]           [13]
+Mult.d F4, F3, F3             [1]            [2, 7]         []             [9]            [13]
+Add.d F6, F4, F1              [2]            [10, 12]       []             [13]           [14]
+Sub.d F7, F5, F6              [2]            [14, 16]       []             [17]           [18]
+Add.d F1, F2, F2              [10]           [11, 13]       []             [14]           [18]
+Mult.d F8, F1, F7             [10]           [18, 23]       []             [24]           [25]
+Addi R2, R1, 1                [10]           [11, 11]       []             [15]           [25]
+Add R3, R2, R2                [11]           [16, 16]       []             [18]           [25]
+Addi R2, R0, 100              [11]           [12, 12]       []             [16]           [26]
+Sub R4, R3, R2                [11]           [19, 19]       []             [20]           [26]
+Addi R0, R0, 5                [12]           [13, 13]       []             [19]           [26]
+Add R5, R0, R4                [13]           [21, 21]       []             [22]           [27]
+
+REGISTER VALUES
+        R0       R1       R2       R3       R4       R5       R6       R7       
+value:  0        7        100      16       -84      -84      0        0        
+        R8       R9       R10      R11      R12      R13      R14      R15      
+value:  0        0        0        0        0        0        0        0        
+        R16      R17      R18      R19      R20      R21      R22      R23      
+value:  0        0        0        0        0        0        0        0        
+        R24      R25      R26      R27      R28      R29      R30      R31      
+value:  0        0        0        0        0        0        0        0        
+        F0       F1       F2       F3       F4       F5       F6       F7       
+value:  0        6.0      3.0      5.0      25.0     11.0     27.0     -16.0    
+        F8       F9       F10      F11      F12      F13      F14      F15      
+value:  -96.0    0        0        0        0        0        0        0        
+        F16      F17      F18      F19      F20      F21      F22      F23      
+value:  0        0        0        0        0        0        0        0        
+        F24      F25      F26      F27      F28      F29      F30      F31      
+value:  0        0        0        0        0        0        0        0        
+
+NON-ZERO MEMORY VALUES
+Addresses      Values
